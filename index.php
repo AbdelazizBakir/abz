@@ -1,54 +1,7 @@
-<!DOCTYPE html>
-<html lang="Fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATLAS School</title>
-    
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Custom style -->
-    <link href="assets/css/style.css" rel="stylesheet">
-  </head>
-          <!--Début-->
-<body>
-<header>
- <nav  class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">ATLAS School</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"> </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Activités</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Préinscription</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">A propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
-
+<?php 
+include "app/views/layouts/header.php"; 
+include "app/views/layouts/navbar.php";
+?>
 <main>
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -199,16 +152,6 @@
 
     <hr class="featurette-divider">
 
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</main>
-    </footer>
-    <script src="assets/js/bootstrap.bundle.min.js"> </script>
-</body>
-</html>
+  </div>
+<?php include "app/views/layouts/footer.php"; 
+?>
