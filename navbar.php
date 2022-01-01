@@ -7,28 +7,24 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="././index.php">Accueil</a>
+            <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="app/views/activities.php">Activités</a>
+            <a class="nav-link" href="activities.php">Activités</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./registraion.php">Préinscription</a>
+            <a class="nav-link" href="registration.php">Préinscription</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./about.php">A propos</a>
+            <a class="nav-link" href="about.php">A propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./blog.php">Blog</a>
+            <a class="nav-link" href="blog.php">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./contact.php">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
 </nav>
