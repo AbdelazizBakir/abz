@@ -1,10 +1,13 @@
 module.exports = {
   content: [
     "./pages/index.js",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./layouts/Layout.js",
+    "./components/NavBar.js",
+    "./components/Footer.js",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
 }
+
