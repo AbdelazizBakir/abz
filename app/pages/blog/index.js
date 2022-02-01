@@ -26,7 +26,7 @@ const Blog = ({ posts }) => {
               <img
                 src={`https://source.unsplash.com/720x400/?${post.id}`}
                 className='card-img-top'
-                alt='une image de blog'
+                alt='l image de blog'
               />
               <div className='card-body'>
                 <h5 className='card-title'> {post.title} </h5>
