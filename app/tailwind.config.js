@@ -1,13 +1,18 @@
 module.exports = {
   content: [
-    "./pages/index.js",
-    "./layouts/Layout.js",
-    "./components/NavBar.js",
-    "./components/Footer.js",
-    "./components/HeroSection.js",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false,
+	purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      'sm': '650px',
+      // => @media (min-width: 576px) { ... }
+      'md': '800px',
+      // => @media (min-width: 960px) { ... }
+      'lg': '1440px',
+      // => @media (min-width: 1440px) { ... }
+    },
     extend: {},
   },
   variants: {
