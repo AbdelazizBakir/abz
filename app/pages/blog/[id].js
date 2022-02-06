@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+
 export const getStaticPaths = async () => {
   const res = await fetch(
     "https://jsonplaceholder.typicode.com/posts?_limit=9"
