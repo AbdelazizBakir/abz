@@ -5,40 +5,40 @@ import Image from 'next/image'
 import Logo from '../public/atlas.png'
 import styles from '../styles/Home.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 function NavBar() { 
 	const [isOpen, setIsOpen] = useState(false) 
 	return (
 			<nav className={styles.navbar}>
-				<div className="shadow-md w-screen bg-slate-50 m-0 duration-500 bg-opacity-40">
+				<div className="shadow-lg fixed w-screen bg-slate-50 m-0 duration-500 bg-opacity-40 z-20">
 					<div className="flex items-center h-18">
 						<div className="flex items-center justify-between mx-10 my-1 w-full">
 							<Link href='/' as={'Home'}>
 								<a><Image src="/atlas.png" alt="ATLAS School Logo" width={69} height={45}
 								className="flex justify-start items-center flex-shrink-0" /></a>
 							</Link>
-							<div className="hidden md:block justify-around" absolute z-20>
+							<div className="hidden md:block justify-around">
 								<div className="inline-block space-x-3">
 									<Link href='/' as={ 'Home'}>
-										<a className='text-blue-900 text-md hover:text-amber-700 duration-100 font-medium'>Accueil</a>
+										<a className=' text-black text-md hover:text-blue-800 hover:shadow-sm duration-100 font-medium'>Accueil</a>
 									</Link>
 									<Link href='/about'>
-										<a className="cursor-pointer hover:border-amber-400 hover:border-r-2 hover:border-b-2 text-blue-900 hover:text-zinc-900 px-3 py-3 rounded-none text-md">A propos</a>
+										<a className="cursor-pointer hover:border-blue-400 hover:border-r-2 hover:border-b-2 text-black font-medium hover:text-zinc-900 px-3 py-3 rounded-none text-md">A propos</a>
 									</Link>
 									<Link href='/activities'>
-										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-blue-900 hover:text-zinc-900 m-3 p-3 rounded-xl text-md ">Activités</a>
+										<a className="cursor-pointer hover:border-blue-700 hover:border-b-2  hover:border-t-2 text-black hover:text-white font-medium  m-3 p-2 rounded-lg text-md ">Activités</a>
 									</Link>
 									<Link href='/blog'>
-										<a className="cursor-pointer hover:bg-amber-400 text-blue-900 hover:text-zinc-900 px-3 py-3 rounded-bl-xl text-md">Blog</a>
+										<a className="cursor-pointer border-sky-600 border-b-2  border-t-2 text-blue-800 hover:text-zinc-900 px-3 py-1 rounded-md font-medium text-md">Blog</a>
 									</Link>
 									<Link href='/contact'>
-										<a className="cursor-pointer hover:bg-amber-400 text-blue-900 hover:text-zinc-900 px-3 py-3 rounded-xl duration-500 text-md">Contact</a>
+										<a className="cursor-pointer focus:bg-blue-500 bg-blue-800 text-back text-white px-3 py-3 rounded-xl font-medium duration-500 text-md">Contact</a>
 									</Link>
 									<Link href='/login'>
-										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:bg-slate-700">
+										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 font-medium hover:bg-slate-700">
 											Se connecter
-											<FontAwesomeIcon icon={faUser}  className='ml-1.5 h-4 inline-block' />
+											<FontAwesomeIcon icon={faUser}  className='ml-2 h-4 inline-block' />
 										 </a>
 									</Link>
 								</div>
@@ -99,7 +99,7 @@ function NavBar() {
 				>
 					{(ref) => (
 						<div className="md:hidden" id="mobile-menu">
-							<div ref={ref} className="bg-white absolute z-50 px-2 pt-2 pb-3 space-y-1 sm:px-3">
+							<div ref={ref} className="bg-white  fixed z-10 mt-20 py-2 space-y-2 w-screen h">
 								<Link href="/">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
 								</Link>

@@ -3,7 +3,7 @@ module.exports = {
 	purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      'sm': '650px',
+      'sm': '400px',
       // => @media (min-width: 576px) { ... }
       'md': '800px',
       // => @media (min-width: 960px) { ... }
