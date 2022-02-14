@@ -18,21 +18,23 @@ useEffect(() => {
 	if(transL) {
 		setTimeout(() => {
 			setTransL(false)
-			setTransL((index + 1) % images.length)
-			setTransL((index1 + 1) % images.length)
-		} , 800 )
+			setIndex((index + 1) % images.length)
+			setIndex1((index1 + 1) % images.length)
+		} , 500 )
 	}
-}, [transL])
+}, [ transL])
 
 const images = [
 	'/images/ap.jpg',
 	'/images/bk.jpg',
-	'/images/cal,jpg',
 ]
 const handlePrev = () => {
 	setTransR(true)
 	setTransL(false)
 
+	const nextIndex = index - 1;
+	const nextIndex1 = index1 - 1;
+	
 	
 }
 const handleNext = () => {
@@ -42,18 +44,18 @@ const handleNext = () => {
 			/// (`) pour les fonc js => alt + 96 
 	return (
 		<>
-		<dev className='flex justify-center w-screen h-screen space-x-4 sm:p-t-20'>
-			<buuton className='flex justify-center items-center h-auto w-10 hover:bg-yellow-50 extrablod text-4xl' onClick={handlePrev}>{'<'}</buuton>
-				<div className='relative w-screen h-auto overflow-hidden rounded-xl'>
-					<img className={`absolute object-contain z-0 w-full h-full p-4 ${transL ? 'animate-slideR' : '' }`} src={images[index1]} alt=""/>
+		<dev className='flex justify-center m-t-0 p-t-0 lg:w-screen lg:h-screen'>
+			<buuton className='flex justify-center items-center h-auto w-10 hover:bg-amber-500 extrablod text-4xl' onClick={handlePrev}>{'<'}</buuton>
+				<div className='flex -z-10  w-auto h-auto'>
+					<img className={`w-auto h-screen md:p-t-20 ${transL ? 'transition duration-50 ease-linear transform -translate-x-full' : '' }`} src={images[index]} alt="images"/>
 
-					<img className={`absolute object-contain z-0 w-full h-full p-4 ${transL ? 'animate-slideR' : '' }`} src={images[index1]} alt=""  />
+					<img className={`w-auto h-screen md:p-t-20 ${transL ? 'animate-slideR' : '' }`} src={images[index1]} alt="images"  />
 				</div>
-			<buuton className='flex justify-center items-center h-auto w-10 hover:bg-yellow-50 extrablod text-4xl' onClick={handleNext}>{'>'}</buuton>
+			<buuton className='flex justify-center items-center h-auto w-10 hover:bg-amber-500 extrablod text-4xl' onClick={handleNext}>{'>'}</buuton>
 		</dev>
 
 
-			<div className='flex absolute justify-center items-center -z-10 cursor-pointer hover:shadow-lg text-2xl font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-3xl px-5 py-2'>
+			<div className='flex absolute justify-center items-center z-10 cursor-pointer hover:shadow-lg text-2xl font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-3xl px-5 py-2'>
 				<Link href='/register'>
 					<a className='text-center bg-bleu-200  hover:text-blue-600 '>
 						S'inscrire maintenant
