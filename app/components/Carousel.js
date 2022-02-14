@@ -15,6 +15,13 @@ const [transL , setTransL ] = useState(false)
 const [transR , setTransR ] = useState(false)
 
 useEffect(() => {
+
+	if(transR) {
+		setTimeout(() => {
+			setTransR(false)
+		} , 500 )
+	}
+
 	if(transL) {
 		setTimeout(() => {
 			setTransL(false)
@@ -22,11 +29,13 @@ useEffect(() => {
 			setIndex1((index1 + 1) % images.length)
 		} , 500 )
 	}
-}, [ transL])
+}, [ transL , transR])
 
 const images = [
 	'/images/ap.jpg',
+	'/images/cal.jpg',
 	'/images/bk.jpg',
+	'/images/st.jpg'
 ]
 const handlePrev = () => {
 	setTransR(true)
@@ -35,25 +44,39 @@ const handlePrev = () => {
 	const nextIndex = index - 1;
 	const nextIndex1 = index1 - 1;
 	
-	
-}
+	if(nextIndex < 0) {
+		setIndex(images.length - 1)
+	}
+	else {
+		setIndex(nextIndex)
+	}
+	if(nextIndex < 0) {
+		setIndex1(images.length - 1)
+	}
+	else {
+		setIndex1(nextIndex1)
+	}
+	}
+
 const handleNext = () => {
 	setTransL(true)
 	setTransR(false)
 }
 			/// (`) pour les fonc js => alt + 96 
+								/*<img className={`max-w-screen h-screen ${transL ? 'transition duration-500 ease-linear transform -translate-x-full' : transR ? 'animate-slideL' : '' }`} src={images[]} alt="images" />*/
 	return (
 		<>
-		<dev className='flex justify-center m-t-0 p-t-0 lg:w-screen lg:h-screen'>
-			<buuton className='flex justify-center items-center h-auto w-10 hover:bg-amber-500 extrablod text-4xl' onClick={handlePrev}>{'<'}</buuton>
+		<dev className='flex justify-center m-t-0 p-t-0 sm:h-100 w-screen h-auto'>
+			<buuton className='flex relative justify-center items-center h-auto w-20 hover:bg-amber-500 extrablod text-4xl' onClick={handlePrev}>{'<'}</buuton>
 				<div className='flex -z-10  w-auto h-auto'>
-					<img className={`w-auto h-screen md:p-t-20 ${transL ? 'transition duration-50 ease-linear transform -translate-x-full' : '' }`} src={images[index]} alt="images"/>
+					<img className={`max-w-screen h-screen 
+					${transL ? 'transition duration-500 ease-linear transform -translate-x-full' : 
+					transR ? 'animate-slideL' : '' }`} src={images[i]} alt="images" />
 
-					<img className={`w-auto h-screen md:p-t-20 ${transL ? 'animate-slideR' : '' }`} src={images[index1]} alt="images"  />
+					<img className={`max-w-screen h-screen ${transL ? 'animate-slideR' : transR ? 'transition duration-500 ease-linear transform translate-x-full' : '' }`} src={images[index1]} alt="images"  />
 				</div>
-			<buuton className='flex justify-center items-center h-auto w-10 hover:bg-amber-500 extrablod text-4xl' onClick={handleNext}>{'>'}</buuton>
+			<buuton className='flex relative justify-center items-center h-auto w-20 hover:bg-amber-500 extrablod text-4xl' onClick={handleNext}>{'>'}</buuton>
 		</dev>
-
 
 			<div className='flex absolute justify-center items-center z-10 cursor-pointer hover:shadow-lg text-2xl font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-3xl px-5 py-2'>
 				<Link href='/register'>

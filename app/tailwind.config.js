@@ -14,8 +14,8 @@ module.exports = {
     },
     extend: {
       animation : {
-        slideL : 'slideL 500ms linear',
-        slideR : 'slideR 500ms linear',
+        slideL : 'slideL 400ms linear',
+        slideR : 'slideR 400ms linear',
       },
       keyframes : {
         slideL : {
