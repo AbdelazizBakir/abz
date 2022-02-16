@@ -63,19 +63,15 @@ const handleNext = () => {
 	setTransR(false)
 }
 			/// (`) pour les fonc js => alt + 96 
-								/*<img className={`max-w-screen h-screen ${transL ? 'transition duration-500 ease-linear transform -translate-x-full' : transR ? 'animate-slideL' : '' }`} src={images[]} alt="images" />*/
+								/*<img className={`max-w-screen h-screen ${transL ? 'transition duration-500 ease-linear transform -translate-x-full' : transR ? 'animate-slideL' : '' }`} src={images[index]} alt="images" />*/
 	return (
 		<>
-		<dev className='flex justify-center m-t-0 p-t-0 sm:h-100 w-screen h-auto'>
-			<buuton className='flex relative justify-center items-center h-auto w-20 hover:bg-amber-500 extrablod text-4xl' onClick={handlePrev}>{'<'}</buuton>
-				<div className='flex -z-10  w-auto h-auto'>
-					<img className={`max-w-screen h-screen 
-					${transL ? 'transition duration-500 ease-linear transform -translate-x-full' : 
-					transR ? 'animate-slideL' : '' }`} src={images[i]} alt="images" />
-
-					<img className={`max-w-screen h-screen ${transL ? 'animate-slideR' : transR ? 'transition duration-500 ease-linear transform translate-x-full' : '' }`} src={images[index1]} alt="images"  />
+		<dev className='flex static justify-center p-0 mb-4 sm:h-auto'>
+			<buuton className='flex justify-center items-center z-10 h-auto w-20 hover:bg-amber-50 text-4xl' onClick={handlePrev}>{'<'}</buuton>
+				<div className='flex relative w-auto h-screen sm:h-auto sm:t-0'>
+					<img className={` ${transL ? 'animate-slideR' : transR ? 'transition duration-500 ease-linear transform translate-x-full' : '' }`} src={images[index1]} alt="images"  />
 				</div>
-			<buuton className='flex relative justify-center items-center h-auto w-20 hover:bg-amber-500 extrablod text-4xl' onClick={handleNext}>{'>'}</buuton>
+			<buuton className='flex justify-center items-center z-10 h-auto w-20 hover:bg-amber-50 text-4xl' onClick={handleNext}>{'>'}</buuton>
 		</dev>
 
 			<div className='flex absolute justify-center items-center z-10 cursor-pointer hover:shadow-lg text-2xl font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-3xl px-5 py-2'>
