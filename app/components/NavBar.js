@@ -21,22 +21,22 @@ function NavBar() {
 							<div className="hidden md:block justify-around">
 								<div className="inline-block space-x-3">
 									<Link href='/' as={ 'Home'}>
-										<a className=' text-black text-md hover:text-blue-800 hover:shadow-sm duration-100 font-medium'>Accueil</a>
+										<a className='cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-lg font-bold m-3 p-2 rounded-none text-md'>Accueil</a>
 									</Link>
 									<Link href='/about'>
-										<a className="cursor-pointer hover:border-blue-400 hover:border-r-2 hover:border-b-2 text-black font-medium hover:text-zinc-900 px-3 py-3 rounded-none text-md">A propos</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-lg font-bold m-3 p-2 rounded-none text-md">A propos</a>
 									</Link>
 									<Link href='/activities'>
-										<a className="cursor-pointer hover:border-blue-700 hover:border-b-2  hover:border-t-2 text-black hover:text-white font-medium  m-3 p-2 rounded-lg text-md ">Activités</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-lg font-bold m-3 p-2 rounded-none text-md">Activités</a>
 									</Link>
 									<Link href='/blog'>
-										<a className="cursor-pointer border-sky-600 border-b-2  border-t-2 text-blue-800 hover:text-zinc-900 px-3 py-1 rounded-md font-medium text-md">Blog</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-lg font-bold m-3 p-2 rounded-none text-md">Blog</a>
 									</Link>
 									<Link href='/contact'>
-										<a className="cursor-pointer focus:bg-blue-500 bg-blue-800 text-back text-white px-3 py-3 rounded-xl font-medium duration-500 text-md">Contact</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-lg font-bold m-3 p-2 rounded-none text-md">Contact</a>
 									</Link>
 									<Link href='/login'>
-										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 font-medium hover:bg-slate-700">
+										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 font-medium hover:bg-blue-900">
 											Se connecter
 											<FontAwesomeIcon icon={faUser}  className='ml-2 h-4 inline-block' />
 										 </a>
