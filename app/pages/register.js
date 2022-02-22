@@ -4,12 +4,7 @@ import styles from '../styles/Home.module.css'
 export default function register() {
   return (
     <>
-      <div className="hidden sm:block" aria-hidden="true">
-        <div className="py-5">
-          <div className="border-t border-gray-200" />
-        </div>
-      </div>
-
+    <div className='flex justify-center w-screen min-h-screen p-5 m-5'>
       <div className="mt-10 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="flex items-center md:col-span-1">
@@ -24,7 +19,7 @@ export default function register() {
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
                     <div className="col-span-6 sm:col-span-3">
-                      <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="first-name" className="block text-md font-medium text-gray-700">
                         Prénom
                       </label>
                       <input
@@ -130,12 +125,7 @@ export default function register() {
           </div>
         </div>
       </div>
-
-      <div className="hidden sm:block" aria-hidden="true">
-        <div className="py-5">
-          <div className="border-t border-gray-200" />
-        </div>
-      </div>
+    </div>
     </>
   )
 }

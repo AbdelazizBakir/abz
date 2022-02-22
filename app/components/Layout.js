@@ -15,9 +15,18 @@ const Layout = ({children}) => {
             <link rel="icon" href="/favicon.ico" />
             <link rel="stylesheet" href="../styles/Home.module.css" />  
           </Head>
+          <div
+            class="
+                w-screen
+                h-full
+                bg-gradient-to-r
+                from-amber-200
+                to-blue-200
+            ">
           <NavBar />
           <main className={styles.main}>{children}</main>
           <Footer />
+          </div>
         </>
     )
 }

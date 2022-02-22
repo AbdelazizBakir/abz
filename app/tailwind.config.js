@@ -3,11 +3,11 @@ module.exports = {
 	purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      'sm': '400px',
+      'sm': '420px',
       // => @media (min-width: 576px) { ... }
       'md': '800px',
       // => @media (min-width: 960px) { ... }
-      'lg': '1440px',
+      'lg': '1365px',
       // => @media (min-width: 1440px) { ... }
       'xl': '1440px',
       '2xl':'1440px',
