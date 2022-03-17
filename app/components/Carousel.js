@@ -69,19 +69,12 @@ const handleNext = () => {
 		<dev className='flex static justify-center p-0 mb-4 sm:h-auto'>
 			<buuton className='flex justify-center items-center z-10 h-auto w-20 hover:bg-amber-50 text-4xl' onClick={handlePrev}>{'<'}</buuton>
 				<div className='flex relative w-auto h-screen sm:h-auto sm:t-0'>
-					<img className={` ${transL ? 'animate-slideR' : transR ? 'transition duration-500 ease-linear transform translate-x-full' : '' }`} src={images[index1]} alt="images"  />
+					<img className={` ${transL ? 'animate-slideR' : transR ? 'transition duration-200 ease-linear transform translate-x-full' : '' }`} src={images[index1]} alt="images"  />
 				</div>
 			<buuton className='flex justify-center items-center z-10 h-auto w-20 hover:bg-amber-50 text-4xl' onClick={handleNext}>{'>'}</buuton>
 		</dev>
 
-			<div className='flex absolute justify-center items-center z-10 cursor-pointer hover:shadow-lg text-2xl font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-3xl px-5 py-2'>
-				<Link href='/register'>
-					<a className='text-center bg-bleu-200  hover:text-blue-600 '>
-						S'inscrire maintenant
-						<FontAwesomeIcon icon={faFileAlt}  className='ml-2 mb-1 w-6 inline-block' />
-					</a>
-				</Link>
-			</div>
+
 		</>
 	)
 }

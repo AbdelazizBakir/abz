@@ -16,7 +16,7 @@ const Layout = ({children}) => {
             <link rel="stylesheet" href="../styles/Home.module.css" />  
           </Head>
           <div
-            class="
+            className="
                 w-screen
                 h-full
                 bg-gradient-to-r

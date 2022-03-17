@@ -21,22 +21,22 @@ function NavBar() {
 							<div className="hidden md:block justify-around">
 								<div className="inline-block space-x-3">
 									<Link href='/' as={ 'Home'}>
-										<a className='cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-md font-bold m-3 p-2 rounded-none text-md'>Accueil</a>
+										<a className='cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md'>Accueil</a>
 									</Link>
 									<Link href='/about'>
-										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-md font-bold m-3 p-2 rounded-none text-md">À Propos</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">À Propos</a>
 									</Link>
 									<Link href='/activities'>
-										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-md font-bold m-3 p-2 rounded-none text-md">Activités</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Activités</a>
 									</Link>
 									<Link href='/blog'>
-										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-md font-bold m-3 p-2 rounded-none text-md">Blog</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Blog</a>
 									</Link>
 									<Link href='/contact'>
-										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2  hover:border-t-2 text-black hover:text-blue-900 hover:shadow-md font-bold m-3 p-2 rounded-none text-md">Contact</a>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Contact</a>
 									</Link>
 									<Link href='/login'>
-										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-md font-medium hover:bg-blue-900">
+										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-sm font-medium hover:bg-blue-900">
 											Se connecter
 											<FontAwesomeIcon icon={faUser}  className='ml-2 h-4 inline-block' />
 										 </a>
@@ -118,8 +118,7 @@ function NavBar() {
 								<Link
 									href='/login'
 									offset={50}
-									duration={500}
-									href="/login">
+									duration={500}>
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Se connecter</a>
 								</Link>
 							</div>

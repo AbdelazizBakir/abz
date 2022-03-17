@@ -28,11 +28,24 @@ function classNames(...classes) {
 export default function dash() {
   return (    
     <div>
-
-    <div>
+      {/*
+        <html class="h-full bg-gray-100">
+        <body class="h-full">
+      */}
+    <div
+    class="
+        flex
+        items-center
+        justify-center
+        w-screen
+        h-screen
+        bg-gradient-to-r
+        from-blue-600
+        to-blue-300
+    ">
     
     </div>
-      <div className="min-h-screen">
+      <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800 w-screen t-0">
           {({ open }) => (
             <>
