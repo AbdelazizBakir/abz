@@ -35,7 +35,6 @@ const images = [
 	'/images/ap.jpg',
 	'/images/cal.jpg',
 	'/images/bk.jpg',
-	'/images/st.jpg'
 ]
 const handlePrev = () => {
 	setTransR(true)
@@ -66,14 +65,15 @@ const handleNext = () => {
 								/*<img className={`max-w-screen h-screen ${transL ? 'transition duration-500 ease-linear transform -translate-x-full' : transR ? 'animate-slideL' : '' }`} src={images[index]} alt="images" />*/
 	return (
 		<>
-		<dev className='flex static justify-center p-0 mb-4 sm:h-auto'>
-			<buuton className='flex justify-center items-center z-10 h-auto w-20 hover:bg-amber-50 text-4xl' onClick={handlePrev}>{'<'}</buuton>
-				<div className='flex relative w-auto h-screen sm:h-auto sm:t-0'>
+		<dev className='flex static justify-center top-0 left-0 right-0 max-w-screen mb-4'>
+			<div className='flex relative'>
+			<button className='flex absolute justify-center items-center top-0 left-0 z-20 h-full w-20 hover:bg-amber-50 opacity-10 text-4xl' onClick={handlePrev}>{'<'}</button>
+				<div className='flex  z-5'>
 					<img className={` ${transL ? 'animate-slideR' : transR ? 'transition duration-200 ease-linear transform translate-x-full' : '' }`} src={images[index1]} alt="images"  />
 				</div>
-			<buuton className='flex justify-center items-center z-10 h-auto w-20 hover:bg-amber-50 text-4xl' onClick={handleNext}>{'>'}</buuton>
+			<button className='flex absolute justify-center items-center top-0 right-0 z-20 h-full w-20 hover:bg-amber-50 opacity-10 text-4xl' onClick={handleNext}>{'>'}</button>
+			</div>
 		</dev>
-
 
 		</>
 	)

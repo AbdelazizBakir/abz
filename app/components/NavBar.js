@@ -11,7 +11,7 @@ function NavBar() {
 	const [isOpen, setIsOpen] = useState(false) 
 	return (
 			<nav className={styles.navbar}>
-				<div className="shadow-lg fixed w-screen bg-slate-50 m-0 duration-500 bg-opacity-40 z-20">
+				<div className="shadow-lg fixed w-screen bg-slate-50 m-0 duration-500 bg-opacity-40 z-30">
 					<div className="flex items-center h-18">
 						<div className="flex items-center justify-between mx-10 my-1 w-full">
 							<Link href='/' as={'Home'}>
@@ -36,7 +36,7 @@ function NavBar() {
 										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Contact</a>
 									</Link>
 									<Link href='/login'>
-										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-sm font-medium hover:bg-blue-900">
+										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-lg shadow-sm shadow-amber-400 font-medium hover:bg-blue-900 hover:shadow-blue-800/50">
 											Se connecter
 											<FontAwesomeIcon icon={faUser}  className='ml-2 h-4 inline-block' />
 										 </a>

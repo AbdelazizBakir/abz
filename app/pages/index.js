@@ -14,39 +14,23 @@ export default function Home() {
     <div
     className="
         flex
-        items-center
-        justify-center
-        w-screen
-        h-screen
+        max-w-screen
         bg-gradient-to-r
         from-amber-200
         to-blue-200">
 			<Carousel />
-
-<div className="flex absolute px-6 mx-auto max-w-6xl">
-        <div className="flex flex-col-reverse items-center md:flex-row lg:items-end">
-          <div className="pt-24 pr-8 pb-24 text-center md:pb-12 md:w-1/2 md:text-left">
-            <h1 className="relative z-10 text-5xl font-bold md:text-6xl font-display">
-              Learn the
-              <span
-                className="relative after:content-[url(/img/scratch.svg)] after:absolute after:-top-2 after:-right-6 after:-z-1"
-              >
-                best
-              </span>
-              ways for staying
-              <span
-                className="relative after:content-[url(/img/decoration.svg)] after:absolute after:-bottom-2 after:-right-8 after:-z-1"
-              >
-                productive
+<div className="flex absolute">
+        <div className="flex relative items-center sm:flex-row mt-5 md:mt-30 lg:mt-40 md:ml-10  ">
+          <div className="p-8 text-center ">
+            <h1 className='z-10 md:text-5xl text-left font-bold sm:text-2xl font-display text-amber-400 hover:text-blue-900'>
+              Avec nous, 
+              <span className='block text-left pl-2 text-amber-400 hover:text-blue-900'>
+              Où la qualité de l'éducation avant tout
               </span>
             </h1>
-            <p className="pt-8 text-lg leading-relaxed text-gray-500 md:max-w-md md:text-xl">
-              Working at home is definitely a convenient option and makes sense in these
-              unprecedented times.
+            <p className="p-2 text-xs text-left text-blue-900 md:text-xl font-semibold hover:underline underline-offset-4 hover:text-amber-400">
+              With an expert educational staff and new pedagogical structures
             </p>
-          </div>
-          <div className="flex items-end w-1/2 border-b border-gray-400">
-            <img src="../public/images/cal.jpg" alt="aaa" />
           </div>
         </div>
       </div>

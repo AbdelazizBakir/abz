@@ -4,10 +4,10 @@ import styles from '../styles/Home.module.css'
 export default function contact() {
   return (
     <> 
-    <div className='flex justify-center items-center md:col-span-1 mt-10 sm:mt-0 w-screen min-h-screen p-2 m-2 md:grid md:grid-cols-3 md:gap-6'>
-        <h1 className='px-4 sm:px-0 first-line:max-w-2xl font-bold text-2xl py-16 lg:max-w-7xl lg:px-8'>Contact</h1>
-    </div>
-          <div className="mt-5 md:mt-0 md:col-span-2">
+      <div className='flex static min-h-screen top-4 right-2 left-2'>
+        <h1 className='flex justify-center itmes-center relative sm:px-4 sm:py-4 sm:pt-16 first-line:max-w-xl font-bold text-2xl py-4 lg:max-w-7xl lg:px-8'>Contact</h1>
+ 
+          <div className="flex justify-center itmes-center relative sm:mt-16 sm:mx-2">
             <form action="#" method="POST">
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
@@ -117,6 +117,7 @@ export default function contact() {
               </div>
             </form>
           </div>
+    </div>
     </>
   )
 }
