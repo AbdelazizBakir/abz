@@ -13,6 +13,9 @@ module.exports = {
       '2xl':'1440px',
     },
     extend: {
+      fontFamily: {
+        cursive: ["High Tide"]
+      },
       animation : {
         slideL : 'slideL 400ms linear',
         slideR : 'slideR 400ms linear',

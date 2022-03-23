@@ -35,8 +35,9 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <div className="bg-gray-50">
-      <div className="py-12 px-6 mx-auto max-w-6xl">
+    
+    <div className="max-w-screen justify-center items-center m-2 mb-4">
+      <div className="inline-block py-12 px-6 mx-auto max-w-6xl">
         <div className="flex flex-col gap-5 md:flex-row">
           <div
             v-for="feature in features"
@@ -45,7 +46,6 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <span
-                  
                   className="absolute top-0 left-4 w-3 h-3 rounded-full opacity-50"
                 />
               </div>
@@ -53,14 +53,61 @@ export default function Home() {
                 <span
                   className="absolute right-0 bottom-1 w-12 h-1.5 opacity-60"
                 />
-                <h2 className="relative text-xl font-display">00000 H2 00000</h2>
+                <h2 className="relative text-xl font-display">La crèche en deux phases</h2>
+              </div>
+            </div>
+</div>
+</div>
+</div>
+<div className="inline-block py-12 px-6 mx-auto max-w-6xl">
+        <div className="flex flex-col gap-5 md:flex-row">
+          <div
+            v-for="feature in features"
+            className="flex flex-col p-8 space-y-4 bg-white rounded-lg border border-gray-200 transition-shadow duration-500 ease-out cursor-pointer hover:shadow-xl"
+          >
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <span
+                  className="absolute top-0 left-4 w-3 h-3 rounded-full opacity-50"
+                />
+              </div>
+              <div className="relative">
+                <span
+                  className="absolute right-0 bottom-1 w-12 h-1.5 opacity-60"
+                />
+                <h2 className="relative text-xl font-display">l'enseignement primaire</h2>
+              </div>
+            </div>
+</div>
+</div>
+</div>
+<div className="inline-block py-12 px-6 mx-auto max-w-6xl">
+        <div className="flex flex-col gap-5 md:flex-row">
+          <div
+            v-for="feature in features"
+            className="flex flex-col p-8 space-y-4 bg-white rounded-lg border border-gray-200 transition-shadow duration-500 ease-out cursor-pointer hover:shadow-xl"
+          >
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <span
+                  className="absolute top-0 left-4 w-3 h-3 rounded-full opacity-50"
+                />
+                <p> hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
+                <Image src="/cl.jpg" alt="img" width={200} height={175}
+								className="block object-cover object-center justify-center items-center w-full h-full rounded-lg " />
+                </div>
+              </div>
+              <div className="relative">
+                <span
+                  className="absolute right-0 bottom-1 w-12 h-1.5 opacity-60"
+                />
+                <h2 className="relative text-xl font-display">l'enseignement moyenne</h2>
               </div>
             </div>
 </div>
 </div>
 </div>
 
-    </div>
     </>
   )
 }

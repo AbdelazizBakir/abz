@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Logo from '../public/atlas.png'
 import styles from '../styles/Home.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-regular-svg-icons'
 
 function NavBar() { 
 	const [isOpen, setIsOpen] = useState(false) 
@@ -26,8 +26,8 @@ function NavBar() {
 									<Link href='/about'>
 										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">À Propos</a>
 									</Link>
-									<Link href='/activities'>
-										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Activités</a>
+									<Link href='/gallery'>
+										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Galerie</a>
 									</Link>
 									<Link href='/blog'>
 										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Blog</a>
@@ -106,7 +106,7 @@ function NavBar() {
 								<Link href="/about">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">A propos</a> 
 								</Link>
-								<Link href="/activities">
+								<Link href="/gallery">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Activités</a>
 								</Link>
 								<Link href="/blog">
