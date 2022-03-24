@@ -32,7 +32,7 @@ useEffect(() => {
 }, [ transL , transR])
 
 const images = [
-	'/images/ap.jpg',
+	'/images/apl.jpg',
 	'/images/cal.jpg',
 	'/images/bk.jpg',
 ]
