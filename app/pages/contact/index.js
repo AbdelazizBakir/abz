@@ -1,15 +1,58 @@
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import axios from 'axios'
+
+class Contact {
+constructor(props) {
+  super(props);
+  this.state = {contacts: []};
+  this.headers = [
+      { key: 'id_c', label: 'Id'},
+      { key: 'f_name', label: 'FName' },
+      { key: 'l_name', label: 'LName' },
+      { key: 'email', label: 'Email' }
+      ];
+  this.deleteContact = this.deleteContact.bind(this);
+}
+componentDidMount() {
+const url = 'http://localhost/atlas/app/pages/contact/contacts.php'
+axios.get(url).then(response => response.data)
+.then((data) => {
+this.setState({ contacts: data })
+console.log(this.state.contacts)
+})
+}
+
+deleteContact(id, event) { //alert(id)
+event.preventDefault();
+if(window.confirm("Are you sure want to delete?")) {
+  axios({
+      method: 'post',
+      url: 'http://localhost/devtest/reactjs/contacts.php/?delete=' + id
+  })
+  .then(function (response) {
+      //handle success
+      console.log(response)
+      if(response.status === 200) {
+          alert("Website deleted successfully");
+      }
+  })
+  .catch(function (response) {
+      //handle error
+      console.log(response)
+  });
+}
+}}
 
 export default function contact() {
   return (
     <> 
       <div className='flex static min-h-screen top-4 right-2 left-2 sm:mt-4'>
         <div className='grid grid-col-11'>
-          <h1 className='flex relative justify-center itmes-center sm:px-2 sm:pt-16 font-bold text-2xl py-2 lg:max-w-7xl lg:px-4'>
+          <h1 className='flex relative justify-center itmes-center px-2 pt-20 font-bold text-2xl my-2 lg:max-w-7xl lg:px-4'>
             Contact
           </h1>
-            <div className="flex justify-center itmes-center relative mt-4 mx-2">
+            <div className="flex justify-center itmes-center relative mt-2 mx-1">
               <form action="#" method="POST">
                 <div className="shadow overflow-hidden sm:rounded-md">
                   <div className="px-4 py-5 bg-white sm:p-6">
@@ -83,3 +126,4 @@ export default function contact() {
     </>
   )
 }
+

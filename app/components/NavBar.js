@@ -32,7 +32,7 @@ function NavBar() {
 									<Link href='/blog'>
 										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Blog</a>
 									</Link>
-									<Link href='/contact'>
+									<Link href='/contact/contacts'>
 										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Contact</a>
 									</Link>
 									<Link href='/login'>
@@ -112,7 +112,7 @@ function NavBar() {
 								<Link href="/blog">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
 								</Link>
-								<Link href="/contact">
+								<Link href="/contact/contacts">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
 								</Link>
 								<Link

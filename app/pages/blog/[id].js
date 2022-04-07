@@ -1,9 +1,7 @@
 import React from "react"
 
 export const getStaticPaths = async () => {
-  const res = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=9"
-  );
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=9");
   const data = await res.json();
   const paths = data.map((post) => {
     return {
@@ -20,12 +18,6 @@ export const getStaticProps = async (context) => {
 
   return { props: { post: data } };
 };
-
-/*<div className="grid grid-cols-span-10 bg-gray-100 mx-10 mt-20">
-      <h2  className='flex justify-center items-center'>{post.title}</h2>
-      <hr />
-      <p  className='flex justify-center items-center h-screen p-2'>{post.body}</p>
-    </div>*/
 
 const Post = ({ post }) => {
   return (

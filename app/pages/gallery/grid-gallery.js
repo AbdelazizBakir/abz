@@ -21,7 +21,8 @@ export default function GridGallery({ images }) {
 
   return (
     <>
-    <div className="grid md:grid-cols-4 lg:grid-cols-5 sm:grid-cols-1 gap-2 object-cover object-center min-h-screen">
+    <div className='flex w-screen h-64 pt-32 pl-4 sm:pt-20 md:pt-20 object-cover object-center backdrop-contrast-100 bg-white/80 text-2xl  font-medium'> Galerie de photos des activités de l'école </div>
+    <div className="grid md:grid-cols-4 lg:grid-cols-5 sm:grid-cols-1 gap-2 object-cover object-center m-4 min-h-screen">
       {images &&
         images.map((imageUrl, index) => (
           <VisibilitySensor

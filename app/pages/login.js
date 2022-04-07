@@ -85,6 +85,23 @@ export default function login() {
           </form>
         </div>
       </div>
-    </>
-  ) 
+
+
+
+<main className={styles.main}>
+  {session ? (
+    <button onClick={() => signOut()}>Log out</button>
+  ) : (
+    <button
+      onClick={() => {
+        router.push("/api/auth/signin");
+      }}
+    >
+      Sign in
+    </button>
+  )}
+</main>
+</>
+
+  ); 
 }

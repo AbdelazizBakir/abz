@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 
 const error = () => {
     const router = useRouter()
-    useEffect(() => {setTimeout(() => {router.push("/")}, 4000)}, [])
+    useEffect(() => {setTimeout(() => {router.push("/")}, 40000)}, [])
     return (
 <>
     <div
