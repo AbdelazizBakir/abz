@@ -111,13 +111,13 @@ export default function Home() {
         </div>
 
         <div class="flex w-screen text-center h-96 object-cover object-center bg-[url('/images/call.jpg')]">
-          <p className="flex justify-center text-center p-6 items-center w-screen font-medium  lg:text-3xl md:text-xl sm:text-md text-amber-600">
+          <p className="flex justify-center text-center p-6 items-center w-screen font-medium  lg:text-xl md:text-xl sm:text-md text-amber-600">
           L'école ATLAS SCHOOL est située à Blida, Cité Al-Aichée (cité espagnol),  a une capacité maximale de 400 élèves. Il occupe une superficie de 1 500 mètres carrés, dont 600 construire, composés d'un rez-de-chaussée et d'un premier étage, dans lesquels se trouvent 21 salles d'enseignement, une salles des réunions, un restaurant, une salle des professeurs et une salle de prière, un escalier principal et un escalier de secours, et l'école comprend également un total de 26 toilettes.
           il y a 21 enseignants employer dans cette école soigneusement sélectionnés et supervisés par un inspecteur pédagogique.
           </p>
         </div>
         <div class="flex w-screen h-96 backdrop-blur-sm bg-white/30">
-          <p className="flex justify-center text-left items-center w-3/4 p-4 font-medium  lg:text-3xl md:text-xl sm:text-md text-blue-600">            
+          <p className="flex justify-center text-left items-center w-3/4 p-4 font-medium  lg:text-xl md:text-xl sm:text-md text-blue-600">            
           <ul class="list-disc list-inside">
             <h3>Les services assurés par cette école </h3> <br/>
             <li>La crèche en deux phases</li>

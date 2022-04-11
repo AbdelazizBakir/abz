@@ -1,27 +1,30 @@
-import type { NextApiRequest, NextApiResponse } from "next"
-import NextAuth from "next-auth"
+import NextAuth from "next-auth";
+import Providers from "next-auth/react";
+import GitHubProvider from "next-auth/providers/github";
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { PrismaClient } from "@prisma/client";
 
-export default async function auth(req: NextApiRequest, res: NextApiResponse) {
+const prisma = new PrismaClient();
 
-  if(req.query.nextauth.includes("callback") && req.method === "POST") {
-    console.log(
-      "Handling callback request from my Identity Provider",
-      req.body
-    )
-  }
+export default (req, res) => NextAuth(req, res, {
+  adapter: PrismaAdapter(prisma),
 
-  // Get a custom cookie value from the request
-  const someCookie = req.cookies["some-custom-cookie"]
-
-  return await NextAuth(req, res, {
-    ...
+    providers: [
+      GitHubProvider({
+        clientId: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET
+      }),
+    ],
     callbacks: {
-      session({ session, token }) {
-        // Return a cookie value as part of the session
-        // This is read when `req.query.nextauth.includes("session") && req.method === "GET"`
-        session.someCookie = someCookie
-        return session
-      }
-    }
-  })
-}
+    async session({ session, user }) {
+      session.userId = user.id;
+      session.role = user.role;
+      return Promise.resolve(session);
+    },
+  },
+    debug: process.env.NODE_ENV === "development",
+    secret: process.env.AUTH_SECRET,
+    jwt: {
+      secret: process.env.JWT_SECRET,
+    },
+  }); 
