@@ -6,9 +6,13 @@ import Logo from '../public/atlas.png'
 import styles from '../styles/Home.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
+import { signIn, signOut, useSession } from "next-auth/react";
 
 function NavBar() { 
 	const [isOpen, setIsOpen] = useState(false) 
+	const { data: session, status } = useSession()
+	const loading = status === "loading"
+
 	return (
 			<nav className={styles.navbar}>
 				<div className="shadow-lg fixed w-screen bg-slate-50 m-0 duration-500 bg-opacity-40 z-30">
@@ -37,8 +41,8 @@ function NavBar() {
 									</Link>
 									<Link href='/login'>
 										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-lg shadow-sm shadow-amber-400 font-medium hover:bg-blue-900 hover:shadow-blue-800/50">
-											Se connecter
-											<FontAwesomeIcon icon={faUser}  className='ml-2 h-4 inline-block' />
+										{session ? `${'Se déconnecter'}`:'Se connecter'} 
+										<FontAwesomeIcon icon={faUser}  className='ml-2 h-4 inline-block' />
 										 </a>
 									</Link>
 								</div>
