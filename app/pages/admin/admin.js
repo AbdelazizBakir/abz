@@ -5,27 +5,14 @@ import Content from "./dashboard/admin/Content";
 import Header from "./dashboard/admin/Header";
 import LeftNavbar from "./dashboard/admin/LeftNavbar";
 
-export default async function(req, res) {
-	/*const [loading, setLoading] = useState(true)
-	useEffect(() => {
-		const securePage = async () => {
-			const session = await getSession()
-			if (!session) {
-				signIn()
-			} else {
-				setLoading(false)
-			}
-		}
-		securePage()
-	}, [])
-	if (loading) {
-		return	<h2>Loading...</h2>
-	}*/
-
+export default function(req, res) {
+	
 	return (
 		<div className={styles.container}>
 			<div className={styles.container}>
-
+				<LeftNavbar />
+				<Header />
+				<Content />
 			</div>
 		</div>
 	);

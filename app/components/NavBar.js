@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { signIn, signOut, useSession } from "next-auth/react";
 
-function NavBar() { 
+function NavBar() {
 	const [isOpen, setIsOpen] = useState(false) 
 	const { data: session, status } = useSession()
 	const loading = status === "loading"

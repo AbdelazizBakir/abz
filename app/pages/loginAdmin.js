@@ -1,31 +1,19 @@
-import Head from "next/head";
-import { SessionProvider } from "next-auth/react";
-import { signIn, signOut, useSession } from "next-auth/react";
-import Link from "next/link";
+// pages/index.js
+import { useUser } from '@auth0/nextjs-auth0';
 
-export default function loginAdmin() {
-  const { data: session, status } = useSession()
-  const loading = status === "loading"
+export default function Index() {
+  const { user, error, isLoading } = useUser();
 
-  return (
-    <>
-    <div className='min-h-screen'>
-        {!session ? (
-          <button className="mt-28" onClick={() => signIn("github")}>GitHub Connect</button>
-        ) : (
-          <span>
-            <span className="mt-28">{session.user.name}</span>
-            {session.user.image && (
-              <img
-              className="mt-28"
-                src={session.user.image}
-                style={{ width: "50px", borderRadius: "70%" }}
-              />
-            )}
-            <button className="mt-28" onClick={signOut}>Sign Out</button>
-            </span>
-        )}
-    </div>
-  </>
-  );
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
+  if (user) {
+    return (
+      <div>
+        Welcome {user.name}! <a className='mt-28' href="/api/auth/logout">Logout</a>
+      </div>
+    );
+  }
+
+  return <a className='mt-28' href="/api/auth/login">Login</a>;
 }

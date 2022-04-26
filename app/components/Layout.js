@@ -3,8 +3,14 @@ import NavBar from './NavBar.js'
 import Footer from './Footer'
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import { useSession } from "next-auth/react";
 
 const Layout = ({children}) => {
+  const [isOpen, setIsOpen] = useState(false) 
+	const { data: session, status } = useSession()
+	const loading = status === "loading"
+
   const router = useRouter()
   const { id } = router.query
     return (
@@ -23,10 +29,10 @@ const Layout = ({children}) => {
                 from-amber-200
                 to-blue-200
             ">
-          <NavBar />
+            {session ? `${<NavBar />}`:''} 
+            </div>
           <main className={styles.main}>{children}</main>
-          <Footer />
-          </div>
+          <div className='bottom-0'> <Footer /></div>
         </>
     )
 }

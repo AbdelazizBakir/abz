@@ -1,30 +1,13 @@
-import Head from "next/head";
-import { SessionProvider } from "next-auth/react";
-import { signIn, signOut, useSession } from "next-auth/react";
+// pages/login.js
+import { useUser } from '@auth0/nextjs-auth0';
 
-export default function loginParent() {
-  const { data: session, status } = useSession()
-  const loading = status === "loading"
+export default function Index() {
 
-  return (
-    <>
-    <div className='min-h-screen'>
-        {!session ? (
-          <button className="mt-28" onClick={() => signIn("github")}>GitHub Connect</button>
-        ) : (
-          <span>
-            <span className="mt-28">{session.user.name}</span>
-            {session.user.image && (
-              <img
-              className="mt-28"
-                src={session.user.image}
-                style={{ width: "50px", borderRadius: "70%" }}
-              />
-            )}
-            <button className="mt-28" onClick={signOut}>Sign Out</button>
-            </span>
-        )}
-    </div>
-  </>
-  );
-}
+    return (
+      <div className='mt-28'>
+         <a  href="/api/auth/logout">Logout</a>
+         <a className='mt-28' href="/api/auth/login">login</a>
+         
+      </div>
+    );
+  }
