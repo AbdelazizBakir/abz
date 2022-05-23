@@ -4,7 +4,7 @@ import axios from 'axios'
 
 class Contact {
 constructor(props) {
-  super(props);
+  init(props);
   this.state = {contacts: []};
   this.headers = [
       { key: 'id_c', label: 'Id'},
@@ -34,7 +34,7 @@ if(window.confirm("Are you sure want to delete?")) {
       //handle success
       console.log(response)
       if(response.status === 200) {
-          alert("Website deleted successfully");
+          alert("Message deleted successfully");
       }
   })
   .catch(function (response) {
@@ -43,6 +43,7 @@ if(window.confirm("Are you sure want to delete?")) {
   });
 }
 }}
+// message => "grid-col-10 grid-row-10 col-span-10 row-span-10 sm:row-span-10 sm:col-span-10"
 
 export default function contact() {
   return (
@@ -95,7 +96,15 @@ export default function contact() {
                           className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-amber-300 border-2 rounded-md"
                         />
                       </div>
-                      <div className="grid-col-10 grid-row-10 col-span-10 row-span-10 sm:row-span-10 sm:col-span-10">
+                       
+                      <div className="w-full
+                                      h-32
+                                      px-4
+                                      py-3
+                                      border-2 border-gray-300
+                                      rounded-sm
+                                      outline-none
+                                      focus:border-blue-400">
                         <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                         Message
                         </label>

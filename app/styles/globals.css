@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 Body {
     height: full;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(221, 219, 219);
 }
 
 html,

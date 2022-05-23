@@ -11,13 +11,13 @@
   }
   
   .footer {
-    box-shadow: 1px 2px 5px rgb(0, 0, 2);
-    background-color: aqua;
+    box-shadow: 1px 2px 5px rgb(2, 2, 22);
     display: flex;
     flex: 1;
     padding: 2rem 0;
     justify-content: bottom;
     align-items: center;
+    bottom: 0px;
   }
   
   .footer a {
@@ -81,7 +81,7 @@
   transition: 0.2s;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   /* For mobile phones: */
 .navcontainer{
   width: 70px;
@@ -90,7 +90,7 @@
   opacity: 0;
 }
 .logo{
-  background: url('../public/atlas.png');
+  background: url('/atlas.png');
   width: 40px;
   height: 40px;
   padding:10px;
@@ -149,7 +149,7 @@ color:red;
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   /* For mobile phones: */
   .headcontainer{
       width: 100%;
@@ -193,12 +193,10 @@ content of dashboard start */
 }
 
 
-
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .contentcontainer{
       margin-left: 70px;
-     
   }
   .contentwrapper{
      display: grid;
@@ -207,56 +205,5 @@ content of dashboard start */
   .tabs{
       width: 350px;
   }
-
-}
-/* 
-charts css started  */
-
-.charts{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-left: 20px;
-}
-.bar{
-  margin-left: 20px;
-}
-
-.circle{
-  margin-left: 120px;
-}
-
-
-@media only screen and (max-width: 768px) {
-  
-.charts{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin:auto;
- 
-}
-.bar>h2{
-  text-align: center;
-  margin-bottom: 20px;
-}
-.circle>h2{
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-.bar{
-  margin-top: 60px;
-  margin-left: 10px;
-  width:300px;
-  height:300px;
-}
-.circle{
-  margin-top: 60px;
-  margin-left: 10px;
-  width:300px;
-  height:300px;
-}
 
 }

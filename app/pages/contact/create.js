@@ -3,7 +3,7 @@ import axios from 'axios'
  
 class Create {
   constructor(props) {
-    super(props);
+    init(props);
     this.state = {name: '', email:'', city:'', country:'', job:''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,7 +45,7 @@ class Create {
     return (
         <div className="container">
             <h1 className="page-header text-center">Add New Contact</h1>
-            <Link to="/" className="btn btn-primary btn-xs">Home</Link>
+            <Link href="#" className="btn btn-primary btn-xs">Home</Link>
             <div className="col-md-12">
             <div className="panel panel-primary">
                 <div className="panel-body">

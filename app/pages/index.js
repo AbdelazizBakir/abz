@@ -19,8 +19,8 @@ export default function Home() {
           relative
           max-w-screen
           bg-gradient-to-r
-          from-amber-200
-          to-blue-200">
+          from-amber-100
+          to-blue-100">
         <Carousel />
   <div className="flex absolute">
           <div className="flex items-center sm:flex-row mt-5 md:mt-30 lg:mt-40 md:ml-10  ">
@@ -39,75 +39,34 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex static justify-center items-center m-1 space-x-6">
-      <div className="flex relative lg:relative md:relative py-4 px-2">
-          <div className="flex relative flex-col gap-5 md:flex-row ">
-            <div
-              className="flex static flex-col p-4 space-y-4 bg-white rounded-lg border border-gray-200 transition-shadow duration-500 ease-out cursor-pointer hover:shadow-xl"
-            >
-              <div className="flex relative justify-center items-center space-x-3">
-                <div className="justify-center items-center">
-                  <span
-                    className="relative justify-center items-center top-0 left-4 w-3 h-3 rounded-full opacity-50"
-                  />
-                  <h3 className="flex justify-center items-center relative py-2">divisé en deux phases</h3>
-                  <Image src="/cl.jpg" alt="img" width={290} height={175}
-                  className="block object-cover object-center justify-center items-center w-full h-full rounded-lg " />
-                  </div>
-                </div>
-                <div className="flex relative justify-center items-center">
-                  <span
-                    className="absolute justify-center items-center right-0 bottom-1 w-12 h-1.5 opacity-60"
-                  />
-                  <h2 className="relative justify-center items-center text-xl font-display">Niveau maternelle</h2>
-                </div>
-              </div>
+        <div className="grid lg:grid-cols-3">
+        <div className="m-2  rounded-lg shadow-xl lg:flex lg:max-w-lg">
+            <Image src="/images/sc.jpg" className="w-1/1 lg:w-1/2 rounded-l-2xl" width={600} height={275} />
+            <div className="p-6 bg-gray-50">
+                <h2 className="mb-2 text-2xl font-bold text-gray-900">Crèche</h2>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum
+                    ab
+                    rem, consequuntur autem totam sit minima porro?</p>
             </div>
-          </div>
-          <div className="flex relative flex-col gap-5 md:flex-row py-4 px-2">
-            <div
-              className="flex relative flex-col p-4 space-y-4 bg-white rounded-lg border border-gray-200 transition-shadow duration-500 ease-out cursor-pointer hover:shadow-xl"
-            >
-              <div className="flex relative justify-center items-center space-x-3">
-                <div className="justify-center items-center">
-                  <span
-                    className="relative justify-center items-center top-0 left-4 w-3 h-3 rounded-full opacity-50"
-                  />
-                  <h3 className="flex justify-center items-center relative py-2">divisé en cinq ans</h3>
-                  <Image src="/images/pr.jpg" alt="img" width={290} height={175}
-                  className="block object-cover object-center justify-center items-center w-full h-full rounded-lg " />
-                  </div>
-                </div>
-                <div className="flex relative justify-center items-center">
-                  <span
-                    className="absolute justify-center items-center right-0 bottom-1 w-12 h-1.5 opacity-60"
-                  />
-                  <h2 className="relative justify-center items-center text-xl font-display">Niveau moyen</h2>
-                </div>
-              </div>
+        </div>
+        <div className="m-2  rounded-lg shadow-xl lg:flex lg:max-w-lg">
+        <Image src="/images/sc.jpg" className="w-1/1 lg:w-1/2 rounded-l-2xl" width={600} height={275} />
+            <div className="p-6 bg-gray-50">
+                <h2 className="mb-2 text-2xl font-bold text-gray-900">Prémaire</h2>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum
+                    ab
+                    rem, consequuntur autem totam sit minima porro?</p>
             </div>
-          <div className="flex relative flex-col gap-5 md:flex-row py-4 px-2">
-            <div
-              className="flex relative flex-col p-4 space-y-4 bg-white rounded-lg border border-gray-200 transition-shadow duration-500 ease-out cursor-pointer hover:shadow-xl"
-            >
-              <div className="flex relative justify-center items-center space-x-3">
-                <div className="justify-center items-center">
-                  <span
-                    className="relative justify-center items-center top-0 left-4 w-3 h-3 rounded-full opacity-50"
-                  />
-                  <h3 className="flex justify-center items-center relative py-2">divisé en quatre ans</h3>
-                  <Image src="/images/sc.jpg" alt="img" width={290} height={175}
-                  className="block object-cover object-center justify-center items-center w-full h-full rounded-lg " />
-                  </div>
-                </div>
-                <div className="flex relative justify-center items-center">
-                  <span
-                    className="absolute justify-center items-center right-0 bottom-1 w-12 h-1.5 opacity-60"
-                  />
-                  <h2 className="relative justify-center items-center text-xl font-display">l'enseignement moyenne</h2>
-                </div>
-              </div>
-          </div>
+        </div>
+        <div className="m-2 rounded-lg shadow-xl lg:flex lg:max-w-lg">
+        <Image src="/images/sc.jpg" className="w-1/1 lg:w-1/2 rounded-l-2xl" width={600} height={275} />
+            <div className="p-6 bg-gray-50">
+                <h2 className="mb-2 text-2xl font-bold text-gray-900">CEM</h2>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum
+                    ab
+                    rem, consequuntur autem totam sit minima porro?</p>
+            </div>
+        </div>
         </div>
 
         <div class="flex w-screen text-center h-96 object-cover object-center bg-[url('/images/call.jpg')]">
@@ -156,6 +115,57 @@ export default function Home() {
         </div>
         </div>
 
+        <div className="flex justify-center mt-16">
+            <div>
+                <div className="px-20 py-36 space-y-4 bg-gray-100 ">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="flex w-screen mt-8 mb-8 text-center h-96 object-cover object-center bg-[url('/images/st.jpg')]">
+          <p className="flex justify-center text-center p-6 items-center w-screen font-medium  lg:text-xl md:text-xl sm:text-md text-amber-600">
+         </p>
+        </div>
+
+        <div className="grid lg:grid-cols-4">
+          <div className="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
+              <Image src="/images/pr.jpg" width={290} height={275} alt="" className="w-full h-48" />
+              <div className="px-6 py-4">
+                  <h4 className="mb-3 text-xl font-semibold tracking-tight text-gray-800">This is the title</h4>
+                  <p className="leading-normal text-gray-700">Lorem ipsum dolor, sit amet cons ectetur adipis icing
+                      elit.
+                      Praesen tium, quibusdam facere quo laborum maiores sequi nam tenetur laud.</p>
+              </div>
+          </div>
+          <div className="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
+          <Image src="/images/pr.jpg" width={290} height={275} alt="" className="w-full h-48" />
+              <div className="px-6 py-4">
+                  <h4 className="mb-3 text-xl font-semibold tracking-tight text-gray-800">This is the title</h4>
+                  <p className="leading-normal text-gray-700">Lorem ipsum dolor, sit amet cons ectetur adipis icing
+                      elit.
+                      Praesen tium, quibusdam facere quo laborum maiores sequi nam tenetur laud.</p>
+              </div>
+          </div>
+          <div className="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
+          <Image src="/images/pr.jpg" width={290} height={275} alt="" className="w-full h-48" />
+              <div className="px-6 py-4">
+                  <h4 className="mb-3 text-xl font-semibold tracking-tight text-gray-800">This is the title</h4>
+                  <p className="leading-normal text-gray-700">Lorem ipsum dolor, sit amet cons ectetur adipis icing
+                      elit.
+                      Praesen tium, quibusdam facere quo laborum maiores sequi nam tenetur laud.</p>
+              </div>
+          </div>
+          <div className="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
+          <Image src="/images/pr.jpg" width={290} height={275} alt="" className="w-full h-48" />
+              <div className="px-6 py-4">
+                  <h4 className="mb-3 text-xl font-semibold tracking-tight text-gray-800">This is the title</h4>
+                  <p className="leading-normal text-gray-700">Lorem ipsum dolor, sit amet cons ectetur adipis icing
+                      elit.
+                      Praesen tium, quibusdam facere quo laborum maiores sequi nam tenetur laud.</p>
+              </div>
+          </div>
+      </div>
       </>
   )
 }

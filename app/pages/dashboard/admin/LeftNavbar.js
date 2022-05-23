@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../../../../styles/Home.module.css';
+import styles from '../../../styles/Home.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faBookOpen,
@@ -12,9 +12,8 @@ import {
 
 function LeftNavbar() {
 	return (
-		<div className={styles.navcontainer}>
+		<div className={styles.navcontainer + " "}>
 			<div className={styles.logo}>
-				<h2>ATLAS</h2>
 			</div>
 			<div className={styles.wrapper}>
 				<ul>
@@ -23,42 +22,21 @@ function LeftNavbar() {
 							icon={faTachometerAlt}
 							style={{ width: "18px", cursor: "pointer" }}
 						/>{" "}
-						<a href="#">Dashboard</a>
-					</li>
-					<li>
-						<FontAwesomeIcon
-							icon={faRocket}
-							style={{ width: "18px", cursor: "pointer" }}
-						/>{" "}
-						<a href="#">Explore</a>
-					</li>
-					<li>
-						<FontAwesomeIcon
-							icon={faBookOpen}
-							style={{ width: "18px", cursor: "pointer" }}
-						/>{" "}
-						<a href="#">Library</a>
-					</li>
-					<li>
-						<FontAwesomeIcon
-							icon={faHeart}
-							style={{ width: "18px", cursor: "pointer" }}
-						/>{" "}
-						<a href="#">Favourite</a>
+						<a href="#">Tableau de bord</a>
 					</li>
 					<li>
 						<FontAwesomeIcon
 							icon={faCog}
 							style={{ width: "18px", cursor: "pointer" }}
 						/>{" "}
-						<a href="#"> Settings</a>
+						<a href="#">Paramètre</a>
 					</li>
 					<li>
 						<FontAwesomeIcon
 							icon={faSignOutAlt}
 							style={{ width: "18px", cursor: "pointer" }}
 						/>{" "}
-						<a href="#">Logout</a>
+						<a href="#">Se déconnecter</a>
 					</li>
 				</ul>
 			</div>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import NavBar from './NavBar.js'
-import Footer from './Footer'
+import Footer from './Footer/Footer'
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
@@ -29,10 +29,11 @@ const Layout = ({children}) => {
                 from-amber-200
                 to-blue-200
             ">
-            {session ? `${<NavBar />}`:''} 
+              <NavBar />
             </div>
+            <div className=''>  </div>
           <main className={styles.main}>{children}</main>
-          <div className='bottom-0'> <Footer /></div>
+          <div className='relative w-screen bottom-0'> <Footer /></div>
         </>
     )
 }

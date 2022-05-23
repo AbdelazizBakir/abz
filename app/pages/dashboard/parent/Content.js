@@ -1,7 +1,5 @@
 import React from "react";
-import styles from '../../../../styles/Home.module.css';
-import { Line } from "react-chartjs-2";
-import { Doughnut } from "react-chartjs-2";
+import styles from '../../../styles/Home.module.css';
 
 //data for bar chart
 const data = {
@@ -80,17 +78,6 @@ function Content() {
 					<div className={styles.categories}>
 						<h2>Projects</h2>
 					</div>
-				</div>
-			</div>
-			{/* chart started  */}
-			<div className={styles.charts}>
-				<div className={styles.bar}>
-					<h2>Sales</h2>
-					{/*<Line data={data} width={400} height={400} />*/}
-				</div>
-				<div className={styles.circle}>
-					<h2>Customers Arrived</h2>
-					{/*<Doughnut data={data1} width={400} height={400} />*/}
 				</div>
 			</div>
 		</div>
