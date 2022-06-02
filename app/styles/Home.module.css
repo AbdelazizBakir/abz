@@ -34,29 +34,26 @@
   }
 /* Daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaash */
 .navcontainer{
+  padding-top: 24px;
+  left:0%;
   position: fixed;
   width:200px;
   height:100%;
   background-color: #fff;
-  box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
-
+  box-shadow: 3px 0px 8px 0px rgba(0, 81, 255, 0.096);
 }
 
 .wrapper{
-   padding:10px;
+  justify-content: center;
+  justify-items: center;
+   padding:5px;
    z-index: 1;
-}
-.logo{
-  padding:10px;
-  padding-left: 20px;
-  text-align:left;
-  font-size: 20px;
-  font-weight: bold;
+   text-align: center;
+
 }
 
 .wrapper >ul{
   margin-top:20px;
-   text-align: left;
    padding-left: 10px;
    display: flex;
    gap:25px;
@@ -71,139 +68,13 @@
   text-decoration: none;
   opacity: .6;
 }
-.wrapper>ul>li:active{
-  color: #000;
-}
 
 .wrapper>ul>li>a:hover{
-  color: darkgoldenrod;
+  color: rgb(0, 87, 187);
   font-size: 22px;
   transition: 0.2s;
 }
 
-@media only screen and (max-width: 800px) {
-  /* For mobile phones: */
-.navcontainer{
-  width: 70px;
-}
-.logo>h2{
-  opacity: 0;
-}
-.logo{
-  background: url('/atlas.png');
-  width: 40px;
-  height: 40px;
-  padding:10px;
-  margin: 10px;
-}
-.wrapper>ul{
-  gap:5px;
-}
-.wrapper>ul>li:hover{
-color:red;
-}
-.wrapper>ul>li>a{
-  opacity: 0;
-}
-
-}
-
-
-/* header css starts  */
-
-.headcontainer{
-  display: flex;
-  flex-wrap: wrap;
-  height:70px;
-  background-color: rgb(255, 255, 255);
-  margin-left:200px;
-  /* z-index: -1; */
- 
-}
-.headwrapper{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.title{
-  margin-left: 40px;
-}
-.title>h2{
-  color: rgb(0, 0, 0);;
-}
-.title>p{
-  color: rgb(0, 0, 0);;
-}
-.title>h2>span{
-  color:rgb(9, 112, 72);
-}
-.profile{
-  position: absolute;
-  right:20px;
-}
-.image{
-  width: 40px;
-  height:40px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 800px) {
-  /* For mobile phones: */
-  .headcontainer{
-      width: 100%;
-      margin-left: 70px;
-  }
-  .profile{
-      position: absolute;
-      right:0px;
-  }
-
-}
-/* 
-content of dashboard start */
-
-.contentcontainer{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left:200px;
-}
-
-.contentwrapper{
-  display: flex;
-  padding: 20px;
-  gap:40px;
-}
-.tabs{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width:250px;
-  height:100px;
-  background-color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
-}
-
-
-.categories>h2{
-  color: rgb(70, 105, 70);
-}
-
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .contentcontainer{
-      margin-left: 70px;
-  }
-  .contentwrapper{
-     display: grid;
-     grid-template-columns: 1fr;
-  }
-  .tabs{
-      width: 350px;
-  }
-
+.wrapper>ul>li:active{
+  color: rgba(0, 17, 173, 0.973);
 }

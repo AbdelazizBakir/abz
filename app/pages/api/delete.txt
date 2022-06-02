@@ -1,0 +1,17 @@
+import {PrismaClient} from '@prisma/client'
+const prisma = new PrismaClient();
+
+export default async (req, res) => {
+    const id = JSON.parse(req.body)
+    const contact = await prisma.contact.delete({
+        data 
+    })
+    try {
+        console.log('Message deleted')
+      } catch (err) {
+        console.log(err)
+      }
+    res.json(contact)
+}
+  //res.json(contact)
+  //res.status(200).json(req.body);

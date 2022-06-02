@@ -7,17 +7,11 @@ import Image from "next/image";
 import {List, ListItem, } from '@chakra-ui/react';
 import Header from "./dashboard/Header";
 import LeftNavbar from "./dashboard/LeftNavbar";
-import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/dist/client/router";
 
 import {PrismaClient} from '@prisma/client'
 const prisma = new PrismaClient()
 
-export default function Admin({ data }) {
-
-    const { data: session } = useSession();
-    const router = useRouter();
-
+export default function Message({ data }) {
     const [formData, setFormData] = useState({})
     const [messages, setMessages] = useState(data)
 
@@ -30,14 +24,13 @@ export default function Admin({ data }) {
         })
         return await response.json();
         };
- //session
- console.log("session", session);
  //ensemble des données
     return (
-    <main>
         <div className={styles.container}>
 			<div className={styles.container}>
+				<LeftNavbar />
 				<Header />
+        <main>
         <div className="flex flex-col ml-56 mr-9 mt-8">
             <div className="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                 <div className="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
@@ -108,14 +101,9 @@ export default function Admin({ data }) {
                 Envoyer
             </button>
         </form>
+    </main>
     </div>
 	</div>
-    {session ? (
-          <button onClick={() => signOut()}>Log out</button>
-        ) : (
-          <button onClick={() => { router.push("/api/auth/signin") }}> Sign in </button>
-        )}
-</main>
 )
 }
 export async function getServerSideProps() {

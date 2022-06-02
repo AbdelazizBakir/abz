@@ -7,7 +7,6 @@ export default function Index() {
       <div className='mt-28'>
          <a  href="/api/auth/logout">Logout</a>
          <a className='mt-28' href="/api/auth/login">login</a>
-         
       </div>
     );
   }

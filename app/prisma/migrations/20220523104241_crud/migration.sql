@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE `crud` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(255) NOT NULL,
+    `name` VARCHAR(70) NOT NULL,
     `description` VARCHAR(191) NULL,
     `link` VARCHAR(191) NULL,
     `subscribers` INTEGER NOT NULL DEFAULT 0,
