@@ -7,12 +7,15 @@ import styles from '../styles/Home.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/dist/client/router";
+import Router from 'next/router'
 
 function NavBar() {
 	const [isOpen, setIsOpen] = useState(false) 
 	const { data: session, status } = useSession()
 	const loading = status === "loading"
-
+/*{session ? `${'Se déconnecter'}`:'Se connecter'} */
+/**/
 	return (
 			<nav className={styles.navbar}>
 				<div className="shadow-lg fixed w-screen bg-slate-50 m-0 duration-500 bg-opacity-40 z-30">
@@ -36,15 +39,30 @@ function NavBar() {
 									<Link href='/blog'>
 										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Blog</a>
 									</Link>
-									<Link href='/contact/contacts'>
+									<Link href='/contact'>
 										<a className="cursor-pointer hover:border-amber-400 hover:border-b-2 text-black hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md">Contact</a>
 									</Link>
-									<Link href='/login'>
-										<a className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-lg shadow-sm shadow-amber-400 font-medium hover:bg-blue-900 hover:shadow-blue-800/50">
-										{session ? `${'Se déconnecter'}`:'Se connecter'} 
-										<FontAwesomeIcon icon={faUser}  className='ml-2 h-4 inline-block' />
-										 </a>
-									</Link>
+
+									{session ?(<button>
+									<a href='/admin' className="cursor-pointer hover:border-amber-500 hover:border-b-2 hover:border-t-2 text-amber-500 hover:text-blue-900 hover:shadow-sm font-bold m-3 p-2 rounded-none text-md"
+									>Admin</a>
+									</button>)
+									:('')}
+
+									{session ? (
+										<button
+										className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-lg shadow-sm shadow-amber-400 font-medium hover:bg-blue-900 hover:shadow-blue-800/50"
+										onClick={() => signOut()}
+										>Se déconnecter
+										</button>
+									) : (
+										<button
+										className="cursor-pointer bg-amber-400 text-slate-700 hover:text-blue-50 px-3 py-3 rounded-xl text-md duration-500 hover:shadow-lg shadow-sm shadow-amber-400 font-medium hover:bg-blue-900 hover:shadow-blue-800/50"
+										onClick={() => { Router.push("/signin") }}
+										>Se connecter 
+										</button>
+									)}
+
 								</div>
 							</div>
 						</div>
@@ -103,7 +121,7 @@ function NavBar() {
 				>
 					{(ref) => (
 						<div className="md:hidden" id="mobile-menu">
-							<div ref={ref} className="bg-white  fixed z-10 mt-20 py-2 space-y-2 w-screen h">
+							<div ref={ref} className="bg-white  fixed z-10 mt-14 py-2 space-y-2 w-screen h">
 								<Link href="/">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
 								</Link>
@@ -116,15 +134,27 @@ function NavBar() {
 								<Link href="/blog">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
 								</Link>
-								<Link href="/contact/contacts">
+								<Link href="/contact">
 									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
 								</Link>
-								<Link
-									href='/login'
-									offset={50}
-									duration={500}>
-									<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">Se connecter</a>
-								</Link>
+
+								{session ? (
+										<button
+										className="w-full cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+										onClick={() => signOut()}
+										offset={50}
+										duration={500}
+										>Se déconnecter
+										</button>
+									) : (
+										<button
+										className="w-full cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+										onClick={() => { Router.push("/signin") }}
+										offset={50}
+										duration={500}
+										>Se connecter 
+										</button>
+									)}
 							</div>
 						</div>
 					)}

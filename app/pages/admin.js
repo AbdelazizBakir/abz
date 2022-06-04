@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "/styles/Home.module.css";
-import {useState} from 'react'
 import React from "react";
 import Link from 'next/link'
 import Image from "next/image";
@@ -9,6 +8,8 @@ import Header from "./dashboard/Header";
 import LeftNavbar from "./dashboard/LeftNavbar";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/dist/client/router";
+import { getSession, signIn } from "next-auth/react";
+import { useEffect, useRef, useState, Router } from "react";
 
 import {PrismaClient} from '@prisma/client'
 const prisma = new PrismaClient()
@@ -17,6 +18,7 @@ export default function Admin({ data }) {
 
     const { data: session } = useSession();
     const router = useRouter();
+    const form = useRef()
 
     const [formData, setFormData] = useState({})
     const [messages, setMessages] = useState(data)
@@ -28,16 +30,48 @@ export default function Admin({ data }) {
             method: 'POST',
             body: JSON.stringify(formData)
         })
+        form.current.reset()
         return await response.json();
         };
  //session
- console.log("session", session);
+ const [loading, setLoading] = useState(true)
+ useEffect(() => {
+     const securePage = async () => {
+         const session = await getSession()
+         if (!session) {
+             signIn()
+         } else {
+             setLoading(false)
+         }
+     }
+     securePage()
+ }, [])
+ if (loading) {
+    return <>
+    <div class="h-screen flex items-center justify-center ">
+        <div class="w-24 h-24 border-l-2 border-gray-900 rounded-full animate-spin"></div>
+    </div>
+   </>
+ }
+ /*<>
+ <div class="h-screen flex items-center justify-center ">
+     <div class="w-24 h-24 border-l-2 border-gray-900 rounded-full animate-spin"></div>
+ </div>
+</>*/
+ console.log("session:", session);
+ /*{session ? (
+    <button onClick={() => signOut()}>Log out</button>
+  ) : (
+    <button onClick={() => { router.push("/api/auth/signin") }}> Sign in </button>
+  )}*/
+  
  //ensemble des données
     return (
     <main>
         <div className={styles.container}>
 			<div className={styles.container}>
 				<Header />
+                <LeftNavbar />
         <div className="flex flex-col ml-56 mr-9 mt-8">
             <div className="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                 <div className="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
@@ -50,6 +84,9 @@ export default function Admin({ data }) {
                                     <th
                                         className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                         Message</th>
+                                    <th
+                                        className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                        Observation</th>
                                     <th
                                         className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                         Statut</th>
@@ -73,6 +110,11 @@ export default function Admin({ data }) {
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <div className="text-sm leading-5 text-gray-500">
+                                        {item.obs}
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                         <span
                                             className="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">Admin</span>
                                     </td>
@@ -83,7 +125,7 @@ export default function Admin({ data }) {
                     </div>
                 </div>
             </div>
-        <form onSubmit={saveMessage} className="bg-blue-100 mr-20 p-4 ml-64 m-8">
+        <form onSubmit={saveMessage} ref={form} className="bg-blue-100 mr-20 p-4 ml-64 m-8">
         <div className="mb-6">
             <label for="name" className="block mb-2 text-sm text-gray-600">Votre nom</label>
             <input className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
@@ -92,7 +134,7 @@ export default function Admin({ data }) {
         <div className="mb-6">
         <label for="id" className="block mb-2 text-sm text-gray-600">Identifiant</label>
             <input className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-            type="text" placeholder="id_123" name="name" onChange={e => setFormData({ ...formData, name: e.target.value })}/> 
+            type="text" placeholder="id" name="id" onChange={e => setFormData({ ...formData, id: e.target.value })}/> 
         </div>
         <div className="mb-6">
             <label for="msg" className="block mb-2 text-sm text-gray-600">Votre message</label>
@@ -102,7 +144,7 @@ export default function Admin({ data }) {
         <div className="mb-6">
             <label for="user" className="block mb-2 text-sm text-gray-600">Récepteur du message</label>
             <input className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-            type="text" placeholder="Bakir ABDELAZIZ" name="user" onChange={e => setFormData({ ...formData, name: e.target.value })}/>
+            type="text" placeholder="Bakir ABDELAZIZ" name="user" onChange={e => setFormData({ ...formData, user: e.target.value })}/>
         </div>
             <button type="submit" className="w-full px-2 py-4 text-white bg-blue-500 rounded-md  focus:bg-blue-600 focus:outline-none">
                 Envoyer
@@ -110,11 +152,7 @@ export default function Admin({ data }) {
         </form>
     </div>
 	</div>
-    {session ? (
-          <button onClick={() => signOut()}>Log out</button>
-        ) : (
-          <button onClick={() => { router.push("/api/auth/signin") }}> Sign in </button>
-        )}
+
 </main>
 )
 }

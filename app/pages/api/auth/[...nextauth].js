@@ -26,22 +26,29 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
-        // Getting the JWT token from API response
-      if (user) {
-        token.name = user.username
-      }
-      return token
-    },
-    async session({ session, token }) {
-      session.name = {
-        username: token.name
-      }
-      return session
+    callbacks: {
+      async jwt({ token, user }) {
+        if (user) {
+          token.name = user.username;
+        }
+        return token;
+      },
+      async session({ session, token }) {
+        session.user = {
+          username: token.name,
+        };
+        return session;
+      },
     },
   },
   pages: {
     signIn: "/signin",
-    signOut: "/index",
+    signOut: "/",
   },
 });
+/*session: ({ session, token }) => {
+        if (token) {
+          session.user = token.name;
+        }
+        return session
+      },*/

@@ -6,11 +6,11 @@ import styles from '../styles/Home.module.css'
 
 const error = () => {
     const router = useRouter()
-    useEffect(() => {setTimeout(() => {router.push("/")}, 40000)}, [])
+    useEffect(() => {setTimeout(() => {router.push("/")}, 2000)}, [])
     return (
 <>
     <div
-    class="
+    className="
         flex
         items-center
         justify-center
@@ -20,15 +20,15 @@ const error = () => {
         from-blue-600
         to-blue-300
     ">
-    <div class="max-w-screen sm:px-6 sm:py-6 px-16 py-12 bg-white rounded-md shadow-xl">
-        <div class="flex flex-col items-center">
-        <h1 class="font-bold text-blue-600 text-9xl sm:text-lg">404</h1>
+    <div className="max-w-screen sm:px-6 sm:py-6 px-16 py-12 bg-white rounded-md shadow-xl">
+        <div className="flex flex-col items-center">
+        <h1 className="font-bold text-blue-600 text-9xl sm:text-lg">404</h1>
 
-        <h6 class="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl sm:text-lg">
-            <span class="text-amber-500">Oops!</span> Page introuvable
+        <h6 className="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl sm:text-lg">
+            <span className="text-amber-500">Oops!</span> Page introuvable
         </h6>
 
-        <p class="mb-8 text-center text-gray-500 md:text-lg sm:text-sm">
+        <p className="mb-8 text-center text-gray-500 md:text-lg sm:text-sm">
             La page que vous recherchez n'existe pas.
         </p>
 
